@@ -1,7 +1,7 @@
 var date = new Date()
-let display_date= "Date:" + date.toLocaleDateString()
+let display_date= "Fecha:" + date.toLocaleDateString()
 
-//Load HTML DOM
+//Cargar HTML DOM
 $(document).ready(function () {
     $("#display_date").html(display_date)
 })
@@ -26,12 +26,12 @@ $(function () {
             contentType: 'application/json',
             success: function (result) {
                 
-                // Result Received From Flask ----->JavaScript
+                // Resultado recibido de Flask ----->JavaScript
                 predicted_emotion = result.data.predicted_emotion
                 emo_url = result.data.predicted_emotion_img_url
 
                 
-                // Display Result Using JavaScript----->HTML
+                // Mostrar resultado usando JavaScript----->HTML
                 $("#prediction").html(predicted_emotion)
                 $('#prediction').css("display", "block");
 
